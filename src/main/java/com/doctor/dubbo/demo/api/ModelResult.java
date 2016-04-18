@@ -2,6 +2,8 @@ package com.doctor.dubbo.demo.api;
 
 import java.io.Serializable;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 /**
  * 
  * @author sdcuike
@@ -62,4 +64,8 @@ public class ModelResult<T> implements Serializable {
         return success;
     }
 
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
+    }
 }

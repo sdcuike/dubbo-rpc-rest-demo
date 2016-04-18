@@ -48,6 +48,12 @@
             <version>2.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-test</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
