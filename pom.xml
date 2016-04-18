@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	                         http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.doctor</groupId>
+        <artifactId>maven-parent-doctor</artifactId>
+        <version>1</version>
+    </parent>
+
+    <artifactId>dubbo-rpc-rest-demo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>${project.artifactId}</name>
+
+    <description></description>
+
+    <inceptionYear>2015</inceptionYear>
+
+    <properties>
+        <dubbo-pom.version>0.0.1</dubbo-pom.version>
+    </properties>
+
+
+    <dependencies>
+
+        <!-- https://github.com/sdcuike/dubbo-pom.git -->
+        <dependency>
+            <groupId>com.doctor</groupId>
+            <artifactId>dubbo-pom</artifactId>
+            <version>${dubbo-pom.version}</version>
+        </dependency>
+        <!-- https://github.com/sdcuike/dubbo-pom.git -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
