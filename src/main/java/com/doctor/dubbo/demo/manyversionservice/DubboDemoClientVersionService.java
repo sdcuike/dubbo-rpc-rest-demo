@@ -83,22 +83,31 @@ public class DubboDemoClientVersionService {
         demoServiceReferenceConfig2.setCheck(false);
 
         DemoService demoService2 = demoServiceReferenceConfig2.get();
+
+        ReferenceConfig<DemoService> demoServiceReferenceConfig3 = new ReferenceConfig<>();
+        demoServiceReferenceConfig3.setApplication(dubboApp);
+        demoServiceReferenceConfig3.setRegistry(registryConfig);
+        demoServiceReferenceConfig3.setInterface(DemoService.class);
+        demoServiceReferenceConfig3.setCheck(false);
+
+        DemoService demoService3 = demoServiceReferenceConfig3.get();
+
         deployment.setResources(resources);
 
         nettyJaxrsServer.start();
 
         // resteasy 暴露服务
-        // deployment.getProviderFactory().register(MyContaNEWinerRequestFilter.class);
         deployment.getRegistry().addSingletonResource(demoService1, "1.0");
         deployment.getRegistry().addSingletonResource(demoService2, "2.0");
+        deployment.getRegistry().addSingletonResource(demoService3);
 
         DemoPerson demoPerson = new DemoPerson();
         demoPerson.setAge(88);
         demoPerson.setName("doctor");
         System.out.println(demoService1.get(demoPerson));
         System.out.println(demoService2.get(demoPerson));
-
-        TimeUnit.SECONDS.sleep(6);
+        System.out.println(demoService3.get(demoPerson));
+        TimeUnit.MINUTES.sleep(6);
         nettyJaxrsServer.stop();
         ProtocolConfig.destroyAll();
     }

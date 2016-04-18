@@ -80,7 +80,23 @@ public class DubboDemoProviderVersionService {
         demoServiceConfig2.setVersion("2.0");
         demoServiceConfig2.export();
 
-        TimeUnit.MINUTES.sleep(2);
+        ServiceConfig<DemoService> demoServiceConfig3 = new ServiceConfig<>();
+        demoServiceConfig3.setApplication(applicationConfig);
+        demoServiceConfig3.setRegistry(registryConfig);
+        demoServiceConfig3.setProtocol(protocolConfig);
+        demoServiceConfig3.setInterface(DemoService.class);
+        demoServiceConfig3.setRef(new DemoService() {
+
+            @Override
+            public ModelResult<String> get(DemoPerson demoPerson) {
+                ModelResult<String> modelResult = new ModelResult<>();
+                modelResult.setData("no version " + demoPerson);
+                return modelResult;
+            }
+        });
+        demoServiceConfig3.export();
+
+        TimeUnit.MINUTES.sleep(12);
         ProtocolConfig.destroyAll();
     }
 

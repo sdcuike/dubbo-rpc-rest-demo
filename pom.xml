@@ -19,7 +19,7 @@
     <inceptionYear>2015</inceptionYear>
 
     <properties>
-        <dubbo-pom.version>0.0.1</dubbo-pom.version>
+        <dubbo-pom.version>0.0.3</dubbo-pom.version>
     </properties>
 
 
