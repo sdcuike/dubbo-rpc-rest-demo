@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.doctor</groupId>
         <artifactId>maven-parent-doctor</artifactId>
-        <version>1</version>
+        <version>2</version>
     </parent>
 
     <artifactId>dubbo-rpc-rest-demo</artifactId>
@@ -30,6 +30,12 @@
             <groupId>com.doctor</groupId>
             <artifactId>dubbo-pom</artifactId>
             <version>${dubbo-pom.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>dubbo-rpc-jsonrpc</artifactId>
+                    <groupId>com.ofpay</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- https://github.com/sdcuike/dubbo-pom.git -->
         <dependency>
@@ -56,4 +62,14 @@
 
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>doctorwho-maven-repo</id>
+            <url>https://raw.githubusercontent.com/sdcuike/maven-repo/master/repositories/releases</url>
+        </repository>
+        <repository>
+            <id>doctorwho-maven-repo-s</id>
+            <url>https://raw.githubusercontent.com/sdcuike/maven-repo/master/repositories/snapshots</url>
+        </repository>
+    </repositories>
 </project>
